@@ -1,9 +1,10 @@
 {
   "development": {
     "username": "root",
-    "password": "Ashish@1",
-    "database": "TutorialDB",
-    "host": "localhost",
+    "password": "eGKUyxjzMPORXlIotiHWZGOZKMeudXfJ",
+    "database": "railway",
+    "host": "tramway.proxy.rlwy.net",
+    "port": 41875,
     "dialect": "mysql"
   },
   "test": {
@@ -15,9 +16,10 @@
   },
   "production": {
     "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
+    "password": "eGKUyxjzMPORXlIotiHWZGOZKMeudXfJ",
+    "database": "railway",
+    "host": "tramway.proxy.rlwy.net",
+    "port": 41875,
     "dialect": "mysql"
   }
 }
