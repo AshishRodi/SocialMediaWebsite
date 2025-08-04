@@ -17,7 +17,7 @@ function App() {
   const [loading, setLoading] = useState(true); // ✅ New loading state
 
   useEffect(() => {
-    axios.get('http://localhost:3001/auth/auth', {
+    axios.get('https://socialmediawebsite-production.up.railway.app/auth/auth', {
       headers: {
         accessToken: localStorage.getItem("accessToken"),
       }

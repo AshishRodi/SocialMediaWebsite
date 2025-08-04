@@ -10,7 +10,7 @@ function Login() {
     const navigate = useNavigate(); 
     const login = () =>{
         const data = {username: username, password: password}
-        axios.post("http://localhost:3001/auth/login", data).then((response) =>{
+        axios.post("https://socialmediawebsite-production.up.railway.app/auth/login", data).then((response) =>{
           if(!response.data.error){ 
             localStorage.setItem("accessToken", response.data.token);
             setAuthState({username: response.data.username, id: response.data.id, status: true});

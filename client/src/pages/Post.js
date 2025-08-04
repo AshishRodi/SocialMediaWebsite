@@ -14,7 +14,7 @@ function Post() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/posts/byId/${id}`)
+      .get(`https://socialmediawebsite-production.up.railway.app/posts/byId/${id}`)
       .then((response) => {
         setPostObject(response.data);
       })
@@ -24,7 +24,7 @@ function Post() {
       });
 
     axios
-      .get(`http://localhost:3001/comments/${id}`)
+      .get(`https://socialmediawebsite-production.up.railway.app/comments/${id}`)
       .then((response) => {
         setComments(response.data);
       })
@@ -42,7 +42,7 @@ function Post() {
 
     axios
       .post(
-        "http://localhost:3001/comments",
+        "https://socialmediawebsite-production.up.railway.app/comments",
         {
           commentBody: newComment,
           PostId: id,
@@ -74,7 +74,7 @@ function Post() {
 
   const deleteComment = (commentId) => {
     axios
-      .delete(`http://localhost:3001/comments/${commentId}`, {
+      .delete(`https://socialmediawebsite-production.up.railway.app/comments/${commentId}`, {
         headers: { accessToken: localStorage.getItem("accessToken") },
       })
       .then(() => {
@@ -86,7 +86,7 @@ function Post() {
       });
   };
   const deletePost =(id)=>{
-    axios.delete(`http://localhost:3001/posts/${id}`, {headers:{accessToken: localStorage.getItem("accessToken")}}).then(()=>{
+    axios.delete(`https://socialmediawebsite-production.up.railway.app/posts/${id}`, {headers:{accessToken: localStorage.getItem("accessToken")}}).then(()=>{
       alert("Post Deleted");
       navigate("/");
     })
@@ -94,7 +94,7 @@ function Post() {
   const editPost = (option) =>{
       if(option==='title'){
         let newTitle = prompt("Enter new title");
-        axios.put("http://localhost:3001/posts/title", {newTitle: newTitle, id: id}, 
+        axios.put("https://socialmediawebsite-production.up.railway.app/posts/title", {newTitle: newTitle, id: id}, 
           {
             headers:{accessToken: localStorage.getItem("accessToken")
 
@@ -104,7 +104,7 @@ function Post() {
       }
       else{
         let newPostText = prompt("Enter new text");
-        axios.put("http://localhost:3001/posts/postText", {newText: newPostText, id: id}, 
+        axios.put("https://socialmediawebsite-production.up.railway.app/posts/postText", {newText: newPostText, id: id}, 
           {
             headers:{accessToken: localStorage.getItem("accessToken")
 
