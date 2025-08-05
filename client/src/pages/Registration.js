@@ -2,12 +2,13 @@ import React from 'react'
 import {Formik, Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 export default function Registration() {
 
     const initialValues = {
         username:"", password: ""
     };
-
+    const navigate = useNavigate();
     const validationSchema = Yup.object().shape({
         username: Yup.string().min(3).max(15).required(),
         password: Yup.string().min(4).max(20).required() 
@@ -16,6 +17,7 @@ export default function Registration() {
     const onSubmit = ((data) =>{
         axios.post("https://socialmediawebsite-production.up.railway.app/auth", data).then(() =>{
             console.log(data);
+            navigate('/login');
         })
     })
   return (
